@@ -1,13 +1,13 @@
-//public class Exactly_3_divisor {
+package com.practice;
+//import java.io.*;
+import java.util.*;
+import java.lang.*;
+public class Exactly_3_divisor {
 //    Also guys I have reported 3 divisor problem TLE issue with NS, seems like a bug with the software or the input cases
 //
 //    This is final solution which is fine
 
-//import java.io.*;
-import java.util.*;
-import java.lang.*;
 
-    class Mainn{
         public static void main (String[] args) {
             Scanner sc=new Scanner(System.in);
 
@@ -56,5 +56,4 @@ import java.lang.*;
             }
             return counter;
         }
-    }
-//}
+}

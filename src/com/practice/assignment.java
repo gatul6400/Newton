@@ -1,10 +1,10 @@
-
+package com.practice;
 import java.io.*; // for handling input/output
 import java.util.*; // contains Collections framework
 
 // don't change the name of this class
 // you can add inner classes if needed
-class Main {
+public class assignment {
     public static void main (String[] args) {
         Scanner sc = new Scanner(System.in);
 //        String s = sc.nextLine();
@@ -115,10 +115,15 @@ class Main {
 
     }
         public static int safe_Position(int n, int k){
-            if(n == 0){
-                return 0;
-            }
-            return size(n, k);
+//            if(n == 0){
+//                return 0;
+//            }
+//            return size(n, k);
+            if (n == 1)
+                return 1;
+            else
+                System.out.println((n-1+"   "+k) + (k - 1)%(n + 1));
+                return (safe_Position(n - 1, k) + k-1) % n + 1;
         }
 
         public static int size(int n, int k){
