@@ -24,15 +24,16 @@ public class romanToInt {
 
     public static void RomanToInt(String s) {
         int sum = romanToInteger(s.charAt(0));
-        for (int i = 1; i < (s.length() + 2); i++) {
+        for (int i = 1; i < s.length(); i++) {
             int current = romanToInteger(s.charAt(i));
 //            int next = romanToInteger(s.charAt(i + 1));
             int previous = romanToInteger(s.charAt(i - 1));
-            System.out.println(i+":-"+previous+"     "+current+"     "+previous);
+            System.out.println(i+":-    "+current+"     "+previous);
             // sum += current;
-            if (current < previous) {
+            if (current > previous) {
                 System.out.println("if");
-                sum -= 2 * current;
+                sum -= (2 * previous);
+                sum += current;
                 System.out.println(sum);
             } else {
                 System.out.println("else");

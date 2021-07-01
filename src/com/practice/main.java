@@ -5,8 +5,9 @@ public class main {
         Scanner sc = new Scanner(System.in);
 //        String s = sc.next();
 //        Exactly_3_divisor.exactly3Divisors(30);
-        romanToInt.RomanToInt("LXIII");
-
+//        romanToInt.RomanToInt("III");
+//        intToRoman.intToRom(10);
+        System.out.println(numToAlphabet.intToAlbhabet(1234567));
     }
 
 }
