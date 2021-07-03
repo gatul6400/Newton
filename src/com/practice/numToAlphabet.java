@@ -27,7 +27,7 @@ public class numToAlphabet {
     public static String Alphabet(int i){
         switch (i){
             case 0:
-                return "Zero";
+                return " ";
             case 1:
                 return "One";
             case 2:
@@ -71,7 +71,7 @@ public class numToAlphabet {
             case 30:
                 return "Thirty";
             case 40:
-                return "Fourty";
+                return "Forty";
             case 50:
                 return "Fifty";
             case 60:
@@ -83,13 +83,13 @@ public class numToAlphabet {
             case 90:
                 return "Ninety";
             case 100:
-                return "Hundred";
+                return " Hundred";
             case 1000:
-                return "Thousand";
+                return " Thousand";
             case 1000000:
-                return "Million";
+                return " Million";
             case 1000000000:
-                return "Billion";
+                return " Billion";
             default:
                 return "No Output";
         }
@@ -100,16 +100,35 @@ public class numToAlphabet {
         for(int i = len.length(); i >= 1; i--){
             String temResult = "";
             int Num = number(i);
-            int count = 0;
+            int breakPoint = 0;
+            if (num == 0){
+                return "Zero";
+            }
             while(num%Num >=0){
                 if(num/Num > 0){
+                    int temNum = num/Num;
                     num = num%Num;
-                    count++;
-                    if (count > 1){
-                        temResult = Alphabet(count) + Alphabet((Num));
+                    if (Num >= 1000000000){
+                        temResult = Alphabet(temNum) + Alphabet(Num);
                     }
-                    else{
-                        temResult = Alphabet(Num);
+                    else if (Num >= 1000000){
+                        temResult = intToAlbhabet(temNum) + Alphabet(Num);
+                    }
+                    else if (Num >= 1000){
+                        temResult = intToAlbhabet(temNum) + Alphabet(Num);
+                    }
+                    else if (Num >= 100){
+                        temResult = Alphabet(temNum) + Alphabet(Num);
+                    }
+                    else if (temNum > 1 && Num >= 10){
+                        temResult =  Alphabet(Num * temNum);
+                    }
+                    else if (Num >= 10){
+                        temResult = Alphabet(Num + num);
+                        breakPoint++;
+                    }
+                    else if (num >= 0 && Num >= 1){
+                        temResult = Alphabet(Num * temNum);
                     }
                 }
                 else{
@@ -117,7 +136,7 @@ public class numToAlphabet {
                 }
             }
             result += temResult;
-            if (num <=0){
+            if (num <=0 || breakPoint > 0){
                 break;
             }
         }

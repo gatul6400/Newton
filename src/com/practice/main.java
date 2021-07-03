@@ -7,7 +7,7 @@ public class main {
 //        Exactly_3_divisor.exactly3Divisors(30);
 //        romanToInt.RomanToInt("III");
 //        intToRoman.intToRom(10);
-        System.out.println(numToAlphabet.intToAlbhabet(1234567));
+        System.out.println(numToAlphabet.intToAlbhabet(10010));
     }
 
 }

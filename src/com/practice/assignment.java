@@ -89,9 +89,6 @@ public class assignment {
 //        return count;
 
 
-
-
-
 //        Scanner sc = new Scanner(System.in);
 //        int n = sc.nextInt();
 //        int a = sc.nextInt();
@@ -108,49 +105,78 @@ public class assignment {
 //        System.out.println(sum);
 
 
-        int n = sc.nextInt();
-        int k = sc.nextInt();
-
-        System.out.println(safe_Position(n, k));
-
-    }
-        public static int safe_Position(int n, int k){
+//        int n = sc.nextInt();
+//        int k = sc.nextInt();
+//
+//        System.out.println(safe_Position(n, k));
+//
+//    }
+//        public static int safe_Position(int n, int k){
 //            if(n == 0){
 //                return 0;
 //            }
 //            return size(n, k);
-            if (n == 1)
-                return 1;
-            else
-                System.out.println((n-1+"   "+k) + (k - 1)%(n + 1));
-                return (safe_Position(n - 1, k) + k-1) % n + 1;
-        }
+//            if (n == 1)
+//                return 1;
+//            else
+//                System.out.println((n-1+"   "+k) + (k - 1)%(n + 1));
+//                return (safe_Position(n - 1, k) + k-1) % n + 1;
+//        }
+//
+//        public static int size(int n, int k){
+//            boolean arr[] = new boolean[n];
+//            Arrays.fill(arr, true);
+//            int N = n;
+//            int temp = k;
+//            int count = k;
+//            while(N-->0){
+//                for(int j = 1; j <= n; j++){
+//                    if(arr[j - 1]){
+//                        count--;
+//                        if(count == 0){
+//                            arr[j - 1] = false;
+//                            count = temp;
+////                            k += temp;
+//                        }
+//                    }
+////                    k = k - n;
+//                }
+//
+//            }
+//            for(int i = 0; i < n; i++){
+//                if(arr[i]){
+//                    return i+1;
+//                }
+//            }
+//            return 0;
+//        }
 
-        public static int size(int n, int k){
-            boolean arr[] = new boolean[n];
-            Arrays.fill(arr, true);
-            int N = n;
-            int temp = k;
-            int count = k;
-            while(N-->0){
-                for(int j = 1; j <= n; j++){
-                    if(arr[j - 1]){
-                        count--;
-                        if(count == 0){
-                            arr[j - 1] = false;
-                            count = temp;
-//                            k += temp;
-                        }
-                    }
-//                    k = k - n;
-                }
 
+
+
+//        Scanner sc = new Scanner(System.in);
+        long n1 = sc.nextLong();
+        long n2 = sc.nextLong();
+        while (n1 > 0 && n2 > 0){
+            // if (n2 % 2 != 0){
+            // 	System.out.println("Aniket   "+n1);
+            // 	return;
+            // }
+            // else if (n1 % 2 != 0){
+            // 	System.out.println("Swapnil   "+n2);
+            // 	return;
+            // }
+            n1 /= 2;
+            if (n1 == 0){
+                break;
             }
-            for(int i = 0; i < n; i++){
-                if(arr[i]){
-                    return i+1;
-                }
-            }
-            return 0;
+            n2 /= 2;
         }
+        if (n1 > n2){
+            System.out.println(n1+"   Aniket   "+n1);
+        }
+        else{
+            System.out.println(n1+ "  Swapnil  "+n2);
+        }
+    }
 }

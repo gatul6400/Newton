@@ -5,7 +5,7 @@ public class Merge_Sort {
         // Merges two subarrays of arr[].
         // First subarray is arr[l..m]
         // Second subarray is arr[m+1..r]
-        void merge(int arr[], int l, int m, int r)
+        static void merge(int arr[], int l, int m, int r)
         {
             // Find sizes of two subarrays to be merged
             int n1 = m - l + 1;
@@ -16,10 +16,10 @@ public class Merge_Sort {
             int R[] = new int[n2];
 
             /*Copy data to temp arrays*/
-            for (int i = 0; i < n1; ++i)
+            for (int i = 0; i < n1; i++)
                 L[i] = arr[l + i];
-            for (int j = 0; j < n2; ++j)
-                R[j] = arr[m + 1 + j];
+            for (int i = 0; i < n2; i++)
+                R[i] = arr[m + 1 + i];
 
             /* Merge the temp arrays */
 
@@ -57,7 +57,7 @@ public class Merge_Sort {
 
         // Main function that sorts arr[l..r] using
         // merge()
-        void sort(int arr[], int l, int r)
+        static int[] sort(int arr[], int l, int r)
         {
             if (l < r) {
                 // Find the middle point
@@ -70,6 +70,7 @@ public class Merge_Sort {
                 // Merge the sorted halves
                 merge(arr, l, m, r);
             }
+            return arr;
         }
 
         /* A utility function to print array of size n */
@@ -84,13 +85,13 @@ public class Merge_Sort {
         // Driver code
         public static void main(String args[])
         {
-            int arr[] = { 12, 11, 13, 5, 6, 7 };
+            int arr[] = {6, 5, 4,8,70, 3, 2 };
 
             System.out.println("Given Array");
             printArray(arr);
 
-            MergeSort ob = new MergeSort();
-            ob.sort(arr, 0, arr.length - 1);
+
+            sort(arr, 0, arr.length - 1);
 
             System.out.println("\nSorted array");
             printArray(arr);
