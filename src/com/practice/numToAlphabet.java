@@ -29,67 +29,67 @@ public class numToAlphabet {
             case 0:
                 return " ";
             case 1:
-                return "One";
+                return "One ";
             case 2:
-                return "Two";
+                return "Two ";
             case 3:
-                return "Three";
+                return "Three ";
             case 4:
-                return "Four";
+                return "Four ";
             case 5:
-                return "Five";
+                return "Five ";
             case 6:
-                return "Six";
+                return "Six ";
             case 7:
-                return "Seven";
+                return "Seven ";
             case 8:
-                return "Eight";
+                return "Eight ";
             case 9:
-                return "Nine";
+                return "Nine ";
             case 10:
-                return "Ten";
+                return "Ten ";
             case 11:
-                return "Eleven";
+                return "Eleven ";
             case 12:
-                return "Twelve";
+                return "Twelve ";
             case 13:
-                return "Thirteen";
+                return "Thirteen ";
             case 14:
-                return "Fourteen";
+                return "Fourteen ";
             case 15:
-                return "Fifteen";
+                return "Fifteen ";
             case 16:
-                return "Sixteen";
+                return "Sixteen ";
             case 17:
-                return "Seventeen";
+                return "Seventeen ";
             case 18:
-                return "Eighteen";
+                return "Eighteen ";
             case 19:
-                return "Nineteen";
+                return "Nineteen ";
             case 20:
-                return "Twenty";
+                return "Twenty ";
             case 30:
-                return "Thirty";
+                return "Thirty ";
             case 40:
-                return "Forty";
+                return "Forty ";
             case 50:
-                return "Fifty";
+                return "Fifty ";
             case 60:
-                return "Sixty";
+                return "Sixty ";
             case 70:
-                return "Seventy";
+                return "Seventy ";
             case 80:
-                return "Eighty";
+                return "Eighty ";
             case 90:
-                return "Ninety";
+                return "Ninety ";
             case 100:
-                return " Hundred";
+                return "Hundred ";
             case 1000:
-                return " Thousand";
+                return "Thousand ";
             case 1000000:
-                return " Million";
+                return "Million ";
             case 1000000000:
-                return " Billion";
+                return "Billion ";
             default:
                 return "No Output";
         }
@@ -112,10 +112,10 @@ public class numToAlphabet {
                         temResult = Alphabet(temNum) + Alphabet(Num);
                     }
                     else if (Num >= 1000000){
-                        temResult = intToAlbhabet(temNum) + Alphabet(Num);
+                        temResult = intToAlbhabet(temNum)+" " + Alphabet(Num);
                     }
                     else if (Num >= 1000){
-                        temResult = intToAlbhabet(temNum) + Alphabet(Num);
+                        temResult = intToAlbhabet(temNum)+" " + Alphabet(Num);
                     }
                     else if (Num >= 100){
                         temResult = Alphabet(temNum) + Alphabet(Num);
@@ -140,6 +140,6 @@ public class numToAlphabet {
                 break;
             }
         }
-        return result;
+        return result.trim();
     }
 }

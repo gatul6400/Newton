@@ -57,15 +57,15 @@ public class Merge_Sort {
 
         // Main function that sorts arr[l..r] using
         // merge()
-        static int[] sort(int arr[], int l, int r)
+        static int[] sortMerge(int arr[], int l, int r)
         {
             if (l < r) {
                 // Find the middle point
                 int m =l+ (r-l)/2;
 
                 // Sort first and second halves
-                sort(arr, l, m);
-                sort(arr, m + 1, r);
+                sortMerge(arr, l, m);
+                sortMerge(arr, m + 1, r);
 
                 // Merge the sorted halves
                 merge(arr, l, m, r);
@@ -91,10 +91,38 @@ public class Merge_Sort {
             printArray(arr);
 
 
-            sort(arr, 0, arr.length - 1);
-
-            System.out.println("\nSorted array");
+            sortMerge(arr, 0, arr.length - 1);
+            System.out.println("\nMergeSorted array");
             printArray(arr);
+
+
+            quickSort(arr, 0, arr.length - 1);
+            System.out.println("\nQuickSorted array");
+            printArray(arr);
+
+        }
+        static void quickSort(int arr[], int start, int end){
+            if(start < end){
+                int pivotPosition = partition(arr, start, end);
+                quickSort(arr, start, pivotPosition - 1);
+                quickSort(arr, pivotPosition + 1 , end);
+            }
+        }
+        static int partition(int arr[], int start, int end){
+            int pivot = arr[end];
+            int pivotPosition = start - 1;
+            for(int i = start; i < end; i++){
+                if(arr[i] < pivot){
+                    pivotPosition++;
+                    int temp = arr[pivotPosition];
+                    arr[pivotPosition] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+            int temp = arr[pivotPosition + 1];
+            arr[pivotPosition + 1] = arr[end];
+            arr[end] = temp;
+            return pivotPosition + 1;
         }
     }
 }
