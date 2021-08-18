@@ -163,14 +163,14 @@ class linkedListAssignment {
             int pos = 1;
 
             while (temp.next != null){
-                System.out.println(temp.val+" -> "+ pos);
+//                System.out.println(temp.val+" -> "+ pos);
                 if(temp.next.val == k){
                     break;
                 }
                 temp = temp.next;
                 pos++;
             }
-            System.out.println(temp.val+"  didnwif");
+//            System.out.println(temp.val+"  didnwif");
             if(pos == 1){
                 newNode.next = temp.next;
                 temp.next = newNode;
