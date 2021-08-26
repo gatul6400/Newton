@@ -1,5 +1,12 @@
 package DSA3_practice.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
+//          TREE LOOK LIKE
+//                1
+//        2               3
+//    4       5       6       7
 class Node{
     int data;
     Node left;
@@ -8,11 +15,7 @@ class Node{
         this.data = data;
     }
 }
-//          TREE LOOK LIKE
-//                1
-//        2               3
-//    4       5       6       7
-public class trees {
+class trees {
     public static void main(String[] args) {
 
         Node root = new Node(1);
@@ -37,6 +40,8 @@ public class trees {
         inOrder(root);
         System.out.println("\nPost-Order");
         postOrder(root);
+        System.out.println("\nLevel-Order");
+        levelOrder(root);
     }
     static void preOrder(Node root){
         if(root == null){
@@ -63,6 +68,23 @@ public class trees {
         postOrder(root.left);
         postOrder(root.right);
         System.out.print(root.data+" ");
+    }
+    static void levelOrder(Node root){
+        if(root == null){
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            Node node = queue.poll();
+            System.out.print(node.data+" ");
+            if(node.left != null){
+                queue.add(node.left);
+            }
+            if(node.right != null){
+                queue.add(node.right);
+            }
+        }
     }
 
 }
