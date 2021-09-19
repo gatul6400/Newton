@@ -22,18 +22,19 @@ public class ques3 {
                 }
             }
         }
+        System.out.println(temp);
 
-        int largestValue = 0;
-        int secondLargestValue = 0;
-        for(int i = 0; i < temp.size(); i++){
-            if (largestValue < temp.get(i)){
-                secondLargestValue = largestValue;
-                largestValue = temp.get(i);
-            }
-            else if (secondLargestValue < temp.get(i)){
-                secondLargestValue = temp.get(i);
-            }
-        }
-        System.out.println(largestValue+"  "+secondLargestValue);
+//        int largestValue = 0;
+//        int secondLargestValue = 0;
+//        for(int i = 0; i < temp.size(); i++){
+//            if (largestValue < temp.get(i)){
+//                secondLargestValue = largestValue;
+//                largestValue = temp.get(i);
+//            }
+//            else if (secondLargestValue < temp.get(i)){
+//                secondLargestValue = temp.get(i);
+//            }
+//        }
+//        System.out.println(largestValue+"  "+secondLargestValue);
     }
 }
